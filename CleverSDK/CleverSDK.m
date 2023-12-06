@@ -133,7 +133,9 @@
     if ([state isEqualToString:manager.state]) {
         validState = YES;
     }
-    
+
+    // Resetting already missed code to prevent error when re-login in
+    manager.alreadyMissedCode = NO;
     manager.successHandler(code, validState);
     return YES;
 }
