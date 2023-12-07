@@ -26,5 +26,5 @@ Pod::Spec.new do |s|
   s.source_files = "CleverSDK/**/*"
   s.exclude_files = "CleverSDK/**/*.plist"
 
-  s.dependency "PocketSVG", "~> 0.7"
+  s.dependency "PocketSVG", "~> 2.7"
 end

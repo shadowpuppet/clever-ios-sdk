@@ -31,3 +31,6 @@ DerivedData
 #
 Pods/
 Podfile.lock
+
+# SPM
+.build

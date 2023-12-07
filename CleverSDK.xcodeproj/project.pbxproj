@@ -65,8 +65,8 @@
 		26AF353221ED59B800263628 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26AF353921ED5A3200263628 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		26BB6E7621ED23F50005D165 /* CleverSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleverSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		26BB6E9C21ED4F500005D165 /* CleverSDK.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = CleverSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		26BB6E9D21ED50820005D165 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		26BB6E9C21ED4F500005D165 /* CleverSDK.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = CleverSDK.podspec; sourceTree = "<group>"; };
+		26BB6E9D21ED50820005D165 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		26F9A8F421ED52C500ED1B6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E76C922290D30329BE308FD /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		64E8BA1FCB6DF2477D8A9182 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,11 +139,11 @@
 		26BB6E6C21ED23F40005D165 = {
 			isa = PBXGroup;
 			children = (
+				9EEA2E532B21399400F7F953 /* Tests */,
+				9EEA2E522B2138FC00F7F953 /* Sources */,
 				268D08D221ED780300DE2088 /* README.md */,
 				26BB6E9C21ED4F500005D165 /* CleverSDK.podspec */,
 				26BB6E9D21ED50820005D165 /* Podfile */,
-				26BB6E7821ED23F50005D165 /* CleverSDK */,
-				26AF352F21ED59B800263628 /* CleverSDKTests */,
 				2663BEA721ED880900ED2BC1 /* Example */,
 				26BB6E7721ED23F50005D165 /* Products */,
 				BD0089461B7688D5F1C1F436 /* Pods */,
@@ -164,13 +164,37 @@
 		26BB6E7821ED23F50005D165 /* CleverSDK */ = {
 			isa = PBXGroup;
 			children = (
+				9EEA2E542B213DFA00F7F953 /* include */,
 				26F9A8F421ED52C500ED1B6F /* Info.plist */,
-				268D08D821ED781700DE2088 /* CleverLoginButton.h */,
 				268D08D621ED781700DE2088 /* CleverLoginButton.m */,
-				268D08D421ED781700DE2088 /* CleverSDK.h */,
 				268D08D721ED781700DE2088 /* CleverSDK.m */,
 			);
 			path = CleverSDK;
+			sourceTree = "<group>";
+		};
+		9EEA2E522B2138FC00F7F953 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				26BB6E7821ED23F50005D165 /* CleverSDK */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		9EEA2E532B21399400F7F953 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				26AF352F21ED59B800263628 /* CleverSDKTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		9EEA2E542B213DFA00F7F953 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				268D08D821ED781700DE2088 /* CleverLoginButton.h */,
+				268D08D421ED781700DE2088 /* CleverSDK.h */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 		BD0089461B7688D5F1C1F436 /* Pods */ = {
@@ -257,6 +281,7 @@
 				26BB6E7221ED23F50005D165 /* Sources */,
 				26BB6E7321ED23F50005D165 /* Frameworks */,
 				26BB6E7421ED23F50005D165 /* Resources */,
+				B39A5221B117E28D4FBCCD3C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -385,6 +410,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B39A5221B117E28D4FBCCD3C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CleverSDK/Pods-CleverSDK-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CleverSDK/Pods-CleverSDK-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CleverSDK/Pods-CleverSDK-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F342E30368C017BF2A2695A6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -502,8 +544,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6D5FQ2E2ZU;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)Tests/PrefixHeader.pch";
-				INFOPLIST_FILE = CleverSDKTests/Info.plist;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Tests/$(PROJECT_NAME)Tests/PrefixHeader.pch";
+				INFOPLIST_FILE = Tests/CleverSDKTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -524,8 +566,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6D5FQ2E2ZU;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)Tests/PrefixHeader.pch";
-				INFOPLIST_FILE = CleverSDKTests/Info.plist;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Tests/$(PROJECT_NAME)Tests/PrefixHeader.pch";
+				INFOPLIST_FILE = Tests/CleverSDKTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -669,7 +711,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = CleverSDK/Info.plist;
+				INFOPLIST_FILE = Sources/CleverSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -697,7 +739,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = CleverSDK/Info.plist;
+				INFOPLIST_FILE = Sources/CleverSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
